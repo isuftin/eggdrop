@@ -15,3 +15,12 @@ Some features of Eggdrop:
 - Established IRC help channels and web sites dedicated to Eggdrop
 - Countless premade Tcl scripts and C modules
 - Best of all ... It's FREE!
+
+## Basic Usage
+
+Building the container to your local system:
+
+```bash
+cd <eggdrop-docker directory>
+sudo docker build -t eggdrop:latest .
+```
