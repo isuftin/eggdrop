@@ -1,6 +1,10 @@
 Eggdrop IRC Bot
 ===============
 
+### Tags/Dockerfile
+
+- [0.0.1](https://github.com/isuftin/eggdrop-docker/blob/0.0.1/)/[Dockerfile](https://github.com/isuftin/eggdrop-docker/blob/0.0.1/Dockerfile)
+
 From [the Eggdrop IRC Bot website](http://www.eggheads.org/):
  
 Eggdrop is the world's most popular Open Source IRC bot, designed for flexibility and ease of use, and is freely distributable under the GNU General Public License (GPL). Eggdrop was originally developed by Robey Pointer; however, he no longer works on Eggdrop so please do not contact him for help solving a problem or bug. 
