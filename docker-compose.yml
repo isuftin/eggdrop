@@ -1,5 +1,5 @@
 eggdrop:
-    image: eggdrop:latest
+    image: eggdrop:0.0.1
     ports: 
         - "8001:8001"
     volumes:
@@ -18,5 +18,5 @@ eggdrop:
        offset: "-6"
        tz_env: true
        listen_ports: "8001|all"
-       chan: "testchan_1,testchan_2"
+       chan: "testchan_1;testchan_2"
         

@@ -12,7 +12,9 @@ if [ "$1" = 'eggdrop' ]; then
         done
     fi
     
-    scripts/autobotchk eggdrop.conf -${crontab_check_time:-5} -noemail
+    if [ $(crontab -l | grep -c botchk) -ne 1 ]; then 
+        scripts/autobotchk eggdrop.conf -${crontab_check_time:-5} -noemail
+    fi
     
     exec "$@"
 else

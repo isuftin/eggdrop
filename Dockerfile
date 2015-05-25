@@ -4,7 +4,7 @@ MAINTAINER Ivan Suftin <isuftin@gmail.com>
 
 USER "root"
 
-VOLUME ["/scripts", "/modules", "/files", "/logs", "/files/incoming", "/configs", "/modules"]
+VOLUME ["/scripts", "/modules", "/files", "/logs", "/files/incoming", "/configs", "/modules", "/docker-egg-init.d"]
 
 ENV eggdrop_user="eggdrop"
 
@@ -52,13 +52,9 @@ ENV eggdrop_nickname="testbot"
 
 ENV PATH ${PWD}:$PATH
 
-RUN mkdir docker-entrypoint-initdb.d
-
-# Create crontab
+# Start the eggdrop bot
 
 COPY /scripts/eggdrop-entrypoint.sh eggdrop-entrypoint.sh
-
-# Start the eggdrop bot
 
 ENTRYPOINT ["eggdrop-entrypoint.sh"]
 CMD ["eggdrop", "-n", "eggdrop.conf"]
