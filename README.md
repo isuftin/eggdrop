@@ -42,18 +42,24 @@ It then pulls the Eggdrop latest Eggdrop source from [Eggheads' FTP site](ftp://
 
 ## Basic Usage
 
-Building the container to your local system:
+#### Pulling the container to your local registry:
 
 ```
-cd  $eggdrop_docker_directory 
-sudo docker build -t eggdrop:latest .
+sudo docker pull isuftin/eggdrop:latest
+```
+
+#### Getting the source (including environments and docker-compose files)
+
+```
+git clone https://github.com/isuftin/eggdrop-docker.git
+cd eggdrop-docker
 ```
 
 ## Running the built image:
 
 ### Creating the userfile
 
-When running the container for the first time, unless you already have a pre-existing user file ( described below ), you will need to create one. I've included an environments file list that make for sensible default variables in creating the initial bot. In order to do so, you will need to run your image in userfile creation mode:
+When running the container for the first time, unless you already have a pre-existing user file ( described below ), you will need to create one. I've included an environments file list that make for sensible default variables in creating the initial bot. In order to do so, make sure you are in the directory you pulled the source from GitHub to. You will need to run your image in userfile creation mode:
 
 ```
 sudo docker run -p 8001:8001 \
