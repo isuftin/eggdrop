@@ -808,11 +808,11 @@ if [ -n "${loadmodule_filesys}" ]; then
     echo "loadmodule filesys"
     
     # Set files path
-    files_path=${files_path:-"/tmp"}
+    files_path=${files_path:-"/files"}
     echo "set files-path \"${files_path}\""
     
     # Set incoming path
-    incoming_path=${incoming_path:-"/tmp"}
+    incoming_path=${incoming_path:-"/files/incoming"}
     echo "set incoming-path \"${incoming_path}\""
     
     # Set upload to pwd
