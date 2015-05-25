@@ -56,7 +56,7 @@ sudo docker build -t eggdrop:latest .
 When running the container for the first time, unless you already have a pre-existing user file ( described below ), you will need to create one. In order to do so, you will need to run your image in userfile creation mode:
 
 ```
-docker run -it eggdrop:latest eggdrop -nm eggdrop.conf
+docker run -p 8001:8001 -it eggdrop:latest eggdrop -nm eggdrop.conf
 ```
 
 In the logs, you should see:
