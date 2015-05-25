@@ -5,7 +5,8 @@
 eggdrop_home="/home/${eggdrop_user}"
 backup_suffix=".bak"
 scripts_directory=${scripts_directory:-"scripts/"}
-logs_dir="/logs"
+config_directory=${config_directory:-"/configs/"}
+logs_dir=${logs_directory:-"/logs/"}
 
 # First make sure all mandatory variables exist
 # Ex: listen_ports="64738|bots;64738|users;64738|all"
@@ -123,7 +124,7 @@ echo "set console \"${console}\""
 
 # Set userfile
 userfile=${userfile:-${eggdrop_nickname}.user}
-echo "set userfile \"${userfile}\"" 
+echo "set userfile \"${config_directory}${userfile}\"" 
 
 # Set pidfile
 pidfile=${pidfile:-"pid.${eggdrop_nickname}"}
