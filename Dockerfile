@@ -61,4 +61,4 @@ COPY /scripts/eggdrop-entrypoint.sh eggdrop-entrypoint.sh
 # Start the eggdrop bot
 
 ENTRYPOINT ["eggdrop-entrypoint.sh"]
-CMD ["eggdrop", "-nm", "eggdrop.conf"]
+CMD ["eggdrop", "-n", "eggdrop.conf"]
