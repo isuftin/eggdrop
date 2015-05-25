@@ -1,0 +1,11 @@
+username=EggdropUser
+owner=EggdropUser
+admin=EggdropUser
+nat_ip=0.0.0.0
+eggdrop_nickname=GenericEgg
+network=EFnet
+timezone=CST
+offset=-6
+tz_env=true
+listen_ports=8001|all
+chan=testchan_1;testchan_2
