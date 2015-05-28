@@ -3,7 +3,7 @@ Eggdrop IRC Bot
 
 ### Tags/Dockerfile
 
-- [0.0.1](https://github.com/isuftin/eggdrop-docker/blob/0.0.1/)/[Dockerfile](https://github.com/isuftin/eggdrop-docker/blob/0.0.1/Dockerfile)
+- [0.0.1](https://github.com/isuftin/eggdrop/blob/0.0.1/)/[Dockerfile](https://github.com/isuftin/eggdrop/blob/0.0.1/Dockerfile)
 
 From [the Eggdrop IRC Bot website](http://www.eggheads.org/):
  
@@ -51,8 +51,8 @@ docker pull isuftin/eggdrop:latest
 #### Getting the source (including environments and docker-compose files)
 
 ```
-git clone https://github.com/isuftin/eggdrop-docker.git
-cd eggdrop-docker
+git clone https://github.com/isuftin/eggdrop.git
+cd eggdrop
 ```
 
 ## Running the built image:
@@ -85,7 +85,7 @@ If you already have a user file you wish to use, put it into your host's filesys
 
 ### Running the eggdrop bot for normal operation
 
-There is a [docker-compose template](https://github.com/isuftin/eggdrop-docker/blob/master/docker-compose.yml) included in the source to get started quickly.  
+There is a [docker-compose template](https://github.com/isuftin/eggdrop/blob/master/docker-compose.yml) included in the source to get started quickly.  
 
 There are three mandatory variables that need to be set during a run:
 
@@ -101,7 +101,7 @@ docker run \
   -p 8001:8001 -it eggdrop:latest 
 ```
 
-The eggdrop configuration file is written at run-time and is fully configurable through environment variables. The sensible defaults are those from the original [eggdrop.conf](http://cvs.eggheads.org/viewvc/eggdrop1.6/eggdrop.conf?revision=1.69) fille.  In order to customize the bot to your liking, check out the [configuration file](https://github.com/isuftin/eggdrop-docker/blob/master/scripts/configure-eggdrop.sh) to see which variables need changing. You may also provide a pre-existing configuration file by putting it into the mapped `/configs` volume. If, for example, your eggdrop configuration file is `/configs/my-eggdrop.conf`, your docker run will look like:
+The eggdrop configuration file is written at run-time and is fully configurable through environment variables. The sensible defaults are those from the original [eggdrop.conf](http://cvs.eggheads.org/viewvc/eggdrop1.6/eggdrop.conf?revision=1.69) fille.  In order to customize the bot to your liking, check out the [configuration file](https://github.com/isuftin/eggdrop/blob/master/scripts/configure-eggdrop.sh) to see which variables need changing. You may also provide a pre-existing configuration file by putting it into the mapped `/configs` volume. If, for example, your eggdrop configuration file is `/configs/my-eggdrop.conf`, your docker run will look like:
 
 ```
 docker run [...] -it eggdrop:latest eggdrop -n /configs/my-eggdrop.conf
@@ -115,7 +115,7 @@ If you link a volume to `/docker-egg-init.d` any files in there will be run befo
 - 10-do-something.sh
 - 20-do-the-next-thing.sh
 
-Included in the source is [`init/10-init.sh`](https://github.com/isuftin/eggdrop-docker/blob/master/init/10-init.sh) which will check if you've updated the default scripts directory and will copy all of the default scripts into that directory before starting eggdrop.
+Included in the source is [`init/10-init.sh`](https://github.com/isuftin/eggdrop/blob/master/init/10-init.sh) which will check if you've updated the default scripts directory and will copy all of the default scripts into that directory before starting eggdrop.
 
 ### Notes:
 - if you are having issues connecting to the bot from outside your LAN, check your that `nat_ip` variable is set correctly.  On my host, the docker0 interface is broadcasting to 0.0.0.0, so I set my `nat_ip	` variable to "0.0.0.0" 
