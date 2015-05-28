@@ -45,7 +45,7 @@ It then pulls the Eggdrop latest Eggdrop source from [Eggheads' FTP site](ftp://
 #### Pulling the container to your local registry:
 
 ```
-sudo docker pull isuftin/eggdrop:latest
+docker pull isuftin/eggdrop:latest
 ```
 
 #### Getting the source (including environments and docker-compose files)
@@ -62,7 +62,7 @@ cd eggdrop-docker
 When running the container for the first time, unless you already have a pre-existing user file ( described below ), you will need to create one. I've included an environments file list that make for sensible default variables in creating the initial bot. In order to do so, make sure you are in the directory you pulled the source from GitHub to. You will need to run your image in userfile creation mode:
 
 ```
-sudo docker run -p 8001:8001 \
+docker run -p 8001:8001 \
     --env-file=env-file.list \
     -it isuftin/eggdrop:latest \
     eggdrop -nm eggdrop.conf
@@ -96,7 +96,7 @@ There are three mandatory variables that need to be set during a run:
 Example run:
 
 ```
-sudo docker run \
+docker run \
  -e "listen_ports=8001" -e "owner=isuftin" -e "eggdrop_nickname=eggyweggy" \
   -p 8001:8001 -it eggdrop:latest 
 ```
@@ -104,7 +104,7 @@ sudo docker run \
 The eggdrop configuration file is written at run-time and is fully configurable through environment variables. The sensible defaults are those from the original [eggdrop.conf](http://cvs.eggheads.org/viewvc/eggdrop1.6/eggdrop.conf?revision=1.69) fille.  In order to customize the bot to your liking, check out the [configuration file](https://github.com/isuftin/eggdrop-docker/blob/master/scripts/configure-eggdrop.sh) to see which variables need changing. You may also provide a pre-existing configuration file by putting it into the mapped `/configs` volume. If, for example, your eggdrop configuration file is `/configs/my-eggdrop.conf`, your docker run will look like:
 
 ```
-sudo docker run [...] -it eggdrop:latest eggdrop -n /configs/my-eggdrop.conf
+docker run [...] -it eggdrop:latest eggdrop -n /configs/my-eggdrop.conf
 ```
 I advise that unless you really need it, allow the docker run to create the config file using environment variables. In this way, your configuration may be held in a Docker environments file and picked up using the `--env-file=[]` command-line parameter as described in the [Docker command-line documentation](https://docs.docker.com/reference/commandline/cli/).  
 
